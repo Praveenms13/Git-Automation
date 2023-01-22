@@ -18,7 +18,6 @@ if [ $answer == "1" ] || [ $answer == "github" ]; then
     git branch -m $branch
     git commit -m $commitMessage
     git push -u origin $branch
-    echo "Git Pushed Successfully...."
 elif [ $answer == "2" ] || [ $answer == "gitlab" ]; then
     echo "Choosed Gitlab, before commiting make sure you have created a branch and make the branch unprotected."
     read -p "Enter Gitlab link : " githLink
@@ -32,7 +31,6 @@ elif [ $answer == "2" ] || [ $answer == "gitlab" ]; then
     git branch -m $branch
     git commit -m $commitMessage
     git push -uf origin $branch
-    echo "Git Pushed Successfully..."
 else 
     echo "Wrong Input....."
 fi

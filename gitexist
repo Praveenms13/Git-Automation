@@ -8,7 +8,6 @@ if [ -d .git ]; then
     git add .
     git commit -m $commitMessage
     git push -u origin $branch
-    echo "Git Pushed Successfully..."
 else
     echo "Git repository does not exist, For new commit use gitnew Tool and try again..."
 fi
