@@ -1,0 +1,14 @@
+#! /bin/bash
+
+
+if [ -d .git ]; then
+    echo "Git repository exists and executing the commands...."
+    read -p "Enter Commit Message : " commitMessage
+    read -p "Enter Branch Name : " branch
+    git add .
+    git commit -m $commitMessage
+    git push -u origin $branch
+    echo "Git Pushed Successfully..."
+else
+    echo "Git repository does not exist, For new commit use gitnew Tool and try again..."
+fi
