@@ -1,0 +1,36 @@
+#!/bin/bash
+
+echo "Git Ssh Automation Tool, Only Works with Linux and Mac"
+echo "Choose in which you want to push.."
+echo "1. Github"
+echo "2. Gitlab"
+read -p "Enter Your choice : " answer
+if [ $answer == "1" ] || [ $answer == "github" ]; then
+    echo "Choosed Github, before commiting make sure you have created a branch and make the branch unprotected."
+    read -p "Enter Github link : " githLink
+    read -p "Enter Commit Message : " commitMessage
+    read -p "Enter Branch Name : " branch
+    git init
+    git add .
+    git config --global user.name "praveen"
+    git config --global user.email "mspraveenkumar77@gmail.com"
+    git remote add origin $githLink
+    git branch -m $branch
+    git commit -m $commitMessage
+    git push -u origin $branch
+elif [ $answer == "2" ] || [ $answer == "gitlab" ]; then
+    echo "Choosed Gitlab, before commiting make sure you have created a branch and make the branch unprotected."
+    read -p "Enter Gitlab link : " githLink
+    read -p "Enter Commit Message : " commitMessage
+    read -p "Enter Branch Name : " branch
+    git init
+    git add .
+    git config --global user.name "praveen"
+    git config --global user.email "mspraveenkumar77@gmail.com"
+    git remote add origin $githLink
+    git branch -m $branch
+    git commit -m $commitMessage
+    git push -uf origin $branch
+else 
+    echo "Wrong Input....."
+fi
